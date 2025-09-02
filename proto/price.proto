@@ -1,0 +1,19 @@
+syntax = "proto3";
+package pluto.v1;
+
+option go_package = "pluto/v1";
+
+message SubscribeRequest {
+  repeated string tickers = 1; // e.g., ["BTCUSD","ETHUSD"]
+}
+
+message PriceUpdate {
+  string ticker = 1;
+  double price = 2;
+  int64 ts_ms = 3; // server timestamp (ms)
+}
+
+service PriceService {
+  // Server streaming. Client sends one request with the current set of tickers.
+  rpc Subscribe(SubscribeRequest) returns (stream PriceUpdate);
+}

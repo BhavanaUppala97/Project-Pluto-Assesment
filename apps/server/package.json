@@ -1,0 +1,25 @@
+{
+  "name": "@pluto/server",
+  "private": true,
+  "type": "module",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "tsx src/server.ts"
+  },
+  "dependencies": {
+    "@bufbuild/protobuf": "2.7.0",
+    "@connectrpc/connect": "^2.1.0",
+    "@connectrpc/connect-node": "^2.1.0",
+    "cors": "^2.8.5",
+    "eventemitter3": "^5.0.1",
+    "express": "^4.19.2",
+    "playwright": "^1.46.0"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.3",
+    "@types/node": "^24.3.0",
+    "tsx": "^4.15.7",
+    "typescript": "^5.5.4"
+  }
+}

@@ -1,0 +1,25 @@
+﻿# Node
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+*.log
+
+# Build / dist
+dist/
+build/
+out/
+
+# Next.js
+.next/
+.out/
+.vercel/
+
+# Tests / Playwright
+coverage/
+playwright-report/
+test-results/
+
+# Env
+.env
+.env.*

@@ -1,0 +1,7 @@
+﻿version: v1
+plugins:
+  # Generate ESM JavaScript + .d.ts using protobuf-es v2
+  - plugin: buf.build/bufbuild/es:v2.2.2
+    out: proto/gen
+    opt:
+      - target=js

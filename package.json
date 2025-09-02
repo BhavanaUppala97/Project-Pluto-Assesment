@@ -1,0 +1,28 @@
+{
+  "name": "project-pluto",
+  "private": true,
+  "version": "1.0.0",
+  "workspaces": [
+    "apps/*",
+    "proto"
+  ],
+  "scripts": {
+    "gen": "pnpm dlx @bufbuild/buf generate",
+    "dev": "concurrently -k -n SERVER,WEB -c green,blue \"pnpm --filter @pluto/server dev\" \"pnpm --filter @pluto/web dev\"",
+    "build": "pnpm -r build"
+  },
+  "devDependencies": {
+    "@bufbuild/protobuf": "2.7.0",
+    "@connectrpc/connect": "2.1.0",
+    "concurrently": "^9.0.0",
+    "typescript": "^5.5.4"
+  },
+    "pnpm": {
+    "overrides": {
+      "@connectrpc/connect": "2.1.0",
+      "@connectrpc/connect-web": "2.1.0",
+      "@connectrpc/connect-node": "2.1.0",
+      "@bufbuild/protobuf": "2.7.0"
+    }
+  }
+}
