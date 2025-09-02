@@ -139,3 +139,22 @@ pnpm install
 pnpm run gen
 pnpm --filter @pluto/server exec playwright install chromium
 pnpm dev
+
+Troubleshooting
+
+Error: createPromiseClient/MethodKind not found — @connectrpc/connect v2 is required
+Fix:
+
+pnpm -w add @bufbuild/protobuf@^2.7.0 @connectrpc/connect@^2.1.0
+pnpm -w add @connectrpc/connect-web@^2.1.0 @connectrpc/connect-node@^2.1.0
+
+
+Error: SubscribeRequest/PriceUpdate not found. Re-run pnpm run gen.
+Fix: pnpm run gen (from repo root), then restart pnpm dev.
+
+Browser never updates (“waiting…”)
+First ticker triggers Chromium to open. If it’s blocked by antivirus, allow it.
+If the TradingView page layout changed, selectors in watchers.ts may need an update.
+
+Port already in use
+Something is still running on 3000 or 8080. Stop it or change the ports in package.json/server.ts.
